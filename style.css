@@ -1,0 +1,213 @@
+
+/* 
+    Created on : Jan 25, 2015, 9:39:30 PM
+    Author     : Jacob
+*/
+
+* {
+    font-size: 12pt;
+}
+
+body {
+
+    margin-left: 1em;
+    background-image: url("bg.jpg");
+}
+p {
+    background-color: lightgray;
+    border-width: thick;
+    box-shadow: 2px 2px 2px 2px #C2C2D6;
+    color: #000000;
+    font-size: large;
+    padding: 5px;
+    margin: 10px;
+    text-align: left;
+}
+pre {
+    background-color: lightgray;
+    border-width: thick;
+    box-shadow: 2px 2px 2px 2px #C2C2D6;
+    color: #000000;
+    font-size: large;
+    padding: 5px;
+    margin: 10px;
+    text-align: left;
+}
+table {
+    background-color: lightseagreen;
+    border-width: thick;
+    box-shadow: 2px 2px 2px 2px #C2C2D6;
+    color: #000000;
+    font-size: large;
+
+    text-align: center;
+}
+h1 {
+    font-family: "Verdana";
+    font-size: 2.5em;
+    font-weight: bold;
+    background-color: lightgray;
+    border-width: thick;
+    color: #000000;
+    padding: 5px;
+    margin: 15px;
+    text-align: center;
+}
+h2 {
+    color: #000000;
+    font-family: "sansserif";
+    font-size: 1.25em;
+    font-weight: bold;
+}
+h3 {
+    color: black;
+    font-family: "times new roman";
+    font-size: 1em;
+    font-weight: bold;
+}
+h4 {
+    color: #000000;
+    font-family: "sansserif";
+    font-size: 0.8em;
+    font-weight: bold;
+}
+h5 {
+    color: #000000;
+    font-family: "sansserif";
+    font-size: 0.6em;
+    font-weight: bold;
+}
+h6 {
+    color: #000000;
+    font-family: "sansserif";
+    font-size: 0.5em;
+    font-weight: bold;
+}
+
+ol ol ol li {
+    list-style: outside none lower-alpha;
+}
+ol ol li {
+    font-weight: normal;
+    list-style: outside none decimal;
+    padding-top: 0;
+}
+ol li {
+    font-weight: bold;
+    list-style: outside none upper-roman;
+    padding-top: 1em;
+
+}
+ul ul ul li {
+    list-style: outside none circle;
+}
+ul ul li {
+    list-style: outside none square;
+}
+ul li {
+    list-style: outside none disc;
+}
+header {
+    background-color: #dddddd;
+    opacity: 0.8;
+}
+#home {
+    background-color: #aaaaaa;
+}
+#home p {
+    text-indent: 3em;
+}
+ol li {
+    display: inline-block;
+    list-style-type: none;
+    text-align: center;
+    width: 15em;
+}
+.firstLine {
+    text-indent: 3em;
+}
+
+.large {
+    width: 500px;
+    border:  buttonhighlight;
+    margin-left: 9em;
+    padding: 1em;
+    margin-top: 5em;
+    background-color: whitesmoke;
+    border-width: thick;
+    color: #d1ffff;
+
+}
+.transparent {
+    width: 500px;
+
+    margin-left: 9em;
+    padding: 1em;
+    margin-top: 5em;
+
+
+}
+.small {
+    width: 80px;
+    height: 80px;
+    position: relative;
+    left: 1110px;
+}
+
+footer {
+    background-color: #ffffff;
+    border: 6px solid #000000;
+    color: #ffffff;
+    margin-top: 15em;
+    opacity: 0.5;
+    padding: 0.8em 5.33333%;
+    text-align: center;
+}
+nav {
+    background-color: azure;
+    text-align: center;
+    opacity: 0.5;
+    height: 40px;
+    font-size: 16pt;
+    font-family: "Verdana";
+
+
+}
+figcaption {
+    background-color: azure;
+    width: 500px;
+    margin-left: 9em;
+    padding: 1em;
+    margin-top: .5em;
+
+
+}
+nav ol {
+    padding-left: 5.33333333%;  /* 48px / 900px */
+}
+nav ol li{
+    display: inline;
+    list-style-type: none;
+    padding-right: 3em;
+}
+
+nav ol ol li{
+    background-color: azure;
+    display: inline;
+    list-style-type: none;
+    padding-right: 3em;
+}
+form {
+    background-color: #355492;
+
+}
+/* style the errors in the form so they are visible */
+.mistake {
+    color: #fff;
+    background-color:#800;
+    border: thin solid #000;
+}
+/* style the list of errors that will show before the form */
+#errors ol li{
+    color: #ff5555;
+}
