@@ -6,7 +6,7 @@
         <br>
         C: (603) 499-3448
         <br>
-        <a href="mailto:jmdubois@uvm.edu">Jacob.Dubois@uvm.edu</a>
+        <a href="mailto:EDITTTTTT">EDITTTTT</a>
         <br>
         <a href="http://www.linkedin.com/in/jacobdubois/">Linkedin</a>
         <br>

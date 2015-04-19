@@ -197,17 +197,154 @@ nav ol ol li{
     list-style-type: none;
     padding-right: 3em;
 }
-form {
-    background-color: #355492;
+
+
+
+
+
+h1{
+    background-color: #F5F5F5; 
+    border-top: groove thin #A9A9A9;
+    border-bottom: groove thick #989898;
+    margin-left: 2em;
+    margin-right: 2em;
+    padding-bottom: .75em;
+    padding-left: .75em;
+    padding-top: .75em;
+    font-family: Georgia, Helvetica, Arial, sans-serif;
+    font-size: 2em;
+    line-height: 0.75em;
+}
+
+img{
+
+    padding: .2em;
+    height: 300px;
+    width: 300px;
 
 }
-/* style the errors in the form so they are visible */
-.mistake {
-    color: #fff;
-    background-color:#800;
-    border: thin solid #000;
+
+
+
+ol{
+    margin-left: 1em;
 }
-/* style the list of errors that will show before the form */
-#errors ol li{
-    color: #ff5555;
+
+ol li{
+    background-color: #F3EFE0;
+    border: thin solid darkgray;
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    border-radius: 15px;
+    box-shadow: 10px 10px 5px #888888;
+    display: inline;
+    float: left;
+    list-style-type: none;
+    margin: 1em;
+    padding: 1em;
+    text-align: center;
+    width: 320px;
+}
+ol + li{
+    margin-left: 0;
+}
+
+
+/* ---------------------------   media queries ----------------------------- */
+
+/* laptops, large desktops */
+@media screen and (min-width:1025px){
+    body {
+        width: 95%;
+    }
+
+}
+
+/* ipad and desktop size */
+@media screen and (max-width:1024px){
+    body {		
+        margin: 5em;
+    }
+}
+
+/* ipad portrait */
+@media screen and (max-width:768px){
+    body {
+
+    }
+}
+
+/* tablets in portrait mode */
+@media screen and (max-width:600px){
+    body {
+
+    }
+}
+
+/* mobile device landscape */
+@media screen and (max-width:480px){
+    body {
+
+        margin: 1em;
+
+    }
+
+}
+
+/* mobile device portrait */
+@media screen and (max-width:320px){
+    body {
+
+        margin: 1em;
+
+    }
+
+    nav ol li{
+        display: block;
+        padding: .5em;
+    }
+
+}
+
+ul.img-list {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+ul.img-list li {
+    display: inline-block;
+    height: 300px;
+    margin: 0 1em 1em 0;
+    position: relative;
+    width: 300px;
+}
+
+
+span.text-content span {
+    display: table-cell;
+    text-align: center;
+    vertical-align: middle;
+}
+
+ul.img-list li:hover span.text-content {
+    opacity: 1;
+}
+
+span.text-content {
+    background: rgba(0,0,0,0.5);
+    color: white;
+    cursor: pointer;
+    display: table;
+    height: 300px;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 300px;
+    opacity: 0;
+    -webkit-transition: opacity 500ms;
+    -moz-transition: opacity 500ms;
+    -o-transition: opacity 500ms;
+    transition: opacity 500ms;
 }
