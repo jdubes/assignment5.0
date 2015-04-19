@@ -1,3 +1,5 @@
+
+
 <!-- Includes top, header, and nav. Top adds the head section which have 
 the web pages meta tags along with browser checks. Header adds the title 
 and logo for the site. Nav adds the navigation for easy transitions -->
@@ -74,6 +76,16 @@ if ($file) {
 ?>
 
 <?php
+
+
+print "<br>";
+print "<br>";
+print "<br>";
+print "<br>";
+print "<br>";
+print "<br>";
+print "<br>";
+print "<br>";
 /* display the data */
 print "<ul class=" . "img-list". '>';
 
@@ -100,6 +112,9 @@ if ($debug)
 
 ?>
 
+<?php
+include "footer.php";
 
+?>
 </body>
 </html>

@@ -1,36 +1,118 @@
-<?php
-include ("top.php");
-?>
 
-<!-- Includes top, header, and nav. Top adds the head section which have 
-the web pages meta tags along with browser checks. Header adds the title 
-and logo for the site. Nav adds the navigation for easy transitions -->
-<!-- Start body-->
+    
 
 
-<p>SIGN UP NOW AND GET:
-    <br>
-    20% off 1 item of your choice!
-    <br>
-    Exclusive offers!
-    <br>
-    Inspiration and styling tips!
-    <br>
-    The latest fashion news!
-    <br>
-    <br>
-    An email invitation to enter to win a trip for two to the Coachella Valley Music and Arts Festival! Win a flight to Palm Springs, weekend hotel accommodations and tickets to the festival for you and a friend! Exclusive contest for HM Fashion News subscribers only. Please note that you must be 18 years or older to participate in the contest. Details and instructions on how to enter the contest will be delivered to your inbox on March 20th.
-</p>
-<figure>
-    <img src="sign.jpg" alt="Sign up!" class="large">
-    <figcaption>Sign up and Save!</figcaption>
-</figure>
-<!-- End body -->
+<head>
+    
+    <style>
+body { background: #221; }
+#slidy-container { 
+  width: 70%; overflow: hidden; margin: 0 auto;
+}
+#noodlesoup {
+    width: 100%;
+        height: 100%;
+}
+#phosoup {
+  
+width: 100%;
+        height: 100%;
+   
+}
+#dish {
+   width: 100%;
+        height: 100%;
 
-<!-- Includes footer information -->
-<?php
-include ("footer.php");
-?>
-</body>
+       
+}
+#springrolls {
+    width: 100%;
+        height: 100%;
+  
 
-</html>
+      
+}
+#sliderbutton {
+    margin-right: auto;
+    margin-left: auto;
+    width: 125%; 
+    text-align: center;
+    float: right;
+
+}
+
+</style>
+
+</head>
+<div id="slidy-container">
+  <figure id="slidy"> <!--slider taken from codepen.io-->
+      <img src="images/noodlesoup.jpg" id="noodlesoup" alt="noodle soup" > <!-- taken from jasminebakersfield.com -->
+    <img src="images/phosoup.jpg" id="phosoup" alt="pho soup" > <!--taken from middbeat.org-->
+    <img src="images/dish.jpg" id="dish" alt="dish" ><!--taken from travellikealocal.files-->
+    <img src="images/springrolls.jpg" id="springrolls" alt="Spring Rolls" > <!-- the burlington freepress-->
+     </figure>
+    <form>
+<input type="button" id="sliderbutton" value="Enter Site" onclick="window.location.href='intro.php'" />
+</form>
+</div>
+
+<script>
+/* user defined variables */
+var timeOnSlide = 3, 		
+    // the time each image will remain static on the screen, measured in seconds
+timeBetweenSlides = 1, 	
+    // the time taken to transition between images, measured in seconds
+
+// test if the browser supports animation, and if it needs a vendor prefix to do so
+    animationstring = 'animation',
+    animation = false,
+    keyframeprefix = '',
+    domPrefixes = 'Webkit Moz O Khtml'.split(' '), 
+    // array of possible vendor prefixes
+    pfx  = '',
+    slidy = document.getElementById("slidy"); 
+if (slidy.style.animationName !== undefined) { animation = true; } 
+// browser supports keyframe animation w/o prefixes
+
+if( animation === false ) {
+  for( var i = 0; i < domPrefixes.length; i++ ) {
+    if( slidy.style[ domPrefixes[i] + 'AnimationName' ] !== undefined ) {
+      pfx = domPrefixes[ i ];
+      animationstring = pfx + 'Animation';
+      keyframeprefix = '-' + pfx.toLowerCase() + '-';
+      animation = true;
+      break;
+    }
+  }
+}
+
+if( animation === false ) {
+  // animate in JavaScript fallback
+} else {
+  var images = slidy.getElementsByTagName("img"),
+      firstImg = images[0], 
+      // get the first image inside the "slidy" element.
+      imgWrap = firstImg.cloneNode(false);  // copy it.
+  slidy.appendChild(imgWrap); // add the clone to the end of the images
+  var imgCount = images.length, // count the number of images in the slide, including the new cloned element
+      totalTime = (timeOnSlide + timeBetweenSlides) * (imgCount - 1), // calculate the total length of the animation by multiplying the number of _actual_ images by the amount of time for both static display of each image and motion between them
+      slideRatio = (timeOnSlide / totalTime)*100, // determine the percentage of time an induvidual image is held static during the animation
+      moveRatio = (timeBetweenSlides / totalTime)*100, // determine the percentage of time for an individual movement
+      basePercentage = 100/imgCount, // work out how wide each image should be in the slidy, as a percentage.
+      position = 0, // set the initial position of the slidy element
+      css = document.createElement("style"); // start marking a new style sheet
+  css.type = "text/css";
+  css.innerHTML += "#slidy { text-align: left; margin: 0; font-size: 0; position: relative; width: " + (imgCount * 100) + "%;  }\n"; // set the width for the slidy container
+  css.innerHTML += "#slidy img { float: left; width: " + basePercentage + "%; }\n";
+  css.innerHTML += "@"+keyframeprefix+"keyframes slidy {\n"; 
+  for (i=0;i<(imgCount-1); i++) { // 
+    position+= slideRatio; // make the keyframe the position of the image
+    css.innerHTML += position+"% { left: -"+(i * 100)+"%; }\n";
+    position += moveRatio; // make the postion for the _next_ slide
+    css.innerHTML += position+"% { left: -"+((i+1) * 100)+"%; }\n";
+}
+  css.innerHTML += "}\n";
+  css.innerHTML += "#slidy { left: 0%; "+keyframeprefix+"transform: translate3d(0,0,0); "+keyframeprefix+"animation: "+totalTime+"s slidy infinite; }\n"; // call on the completed keyframe animation sequence
+document.body.appendChild(css); // add the new stylesheet to the end of the document
+}
+</script>
