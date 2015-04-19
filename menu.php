@@ -84,11 +84,11 @@ foreach ($records as $oneRecord) {
 
         print "\n\t<li>";
         //print out values
-        print '<a href="' . $oneRecord[4] . '" target="_blank" ' . '>';
+        print '<a href="' . $oneRecord[3] . '" target="_blank" ' . '>';
         print "\n\t";
-        print '<img src="images/' . $oneRecord[5] .'" alt="' . $oneRecord[2] . '"/>';
+        print '<img src="images/' . $oneRecord[4] .'" alt="' . $oneRecord[2] . '"/>';
         print '</a>';
-        print '<span class="text-content">' . $oneRecord[1] . "<br>". $oneRecord[2] ."<br>"."Calories: " .$oneRecord[3]. '</span>';
+        print '<span class="text-content">' . $oneRecord[0] . "<br>". $oneRecord[1] . "<br>". $oneRecord[2] ."<br>"."Calories: " .$oneRecord[3]. '</span>';
         print "\n\t</li>";
     }
 }

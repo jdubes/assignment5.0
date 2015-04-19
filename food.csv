@@ -1,5 +1,7 @@
-link,User id,descr,price,abbab,sdfs
-wut,1. Cha Gio,"Fried Vietnamese Egg Roll (4) Stuffed with pork, Cabbage, Carrots and Wood Mushrooms paper",$3.50,http://www.google.com,pho.jpg
-wut,1. Cha Gio,"Fried Vietnamese Egg Roll (4) Stuffed with pork, Cabbage, Carrots and Wood Mushrooms paper",$3.50,http://www.google.com,pho2.jpg
-wut,1. Cha Gio,"Fried Vietnamese Egg Roll (4) Stuffed with pork, Cabbage, Carrots and Wood Mushrooms paper",$3.50,http://www.google.com,pho3.jpg
-wut,1. Cha Gio,"Fried Vietnamese Egg Roll (4) Stuffed with pork, Cabbage, Carrots and Wood Mushrooms paper",$3.50,http://www.google.com,pho4.jpg
+User id,descr,price,abbab,sdfs
+1. Cha Gio,"Fried Vietnamese Egg Roll (4) Stuffed with pork, Cabbage, Carrots and Wood Mushrooms paper",$3.50,470,pho.jpg
+2. Banh Xeo,"Vietnamese Crepe Stuffed with Shrimp, Pork, Bean Sprout and Onion..",$8.95,560,pho2.jpg
+3. Panag Curry,Thai Style Curry with Red Pepper Carrot and Yellow Squash flavored with Coconut Milk,$8.50,650,pho3.jpg
+4. Tom Xao,Pas Seared Spicy Calamari Clay Pot,$9.95,770,pho4.jpg
+5. Spicy Salmon,Tamarind sauce over deep firend salmon served with steamed veggies,$12.95,450,pho5.jpg
+6. Seafood Special,"Scalops, Shrimps, crab meat, squid stir fried and assorted veggies",$15.95,600,pho6.jpg
