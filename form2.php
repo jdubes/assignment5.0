@@ -1,13 +1,13 @@
     
 
-<?php 
-    include "top2.php";
-   
-  
-   
-   
-      
- 
+<?php
+include "top2.php";
+
+
+
+
+
+
 //%^%^%^%^%^%^%^%^%^%^%^%^%^%^%^%^%^%^%^%^%^%^%^%^%^%^%^%^%^%^%^%^%^%^%^%^%^%^%
 //
 // SECTION: 1 Initialize variables
@@ -34,7 +34,7 @@ $yourURL = $domain . $phpSelf;
 // in the order they appear on the form
 
 
-$comments="";
+$comments = "";
 
 $firstName = "";
 $email = "benjamin.gelb@uvm.edu";
@@ -84,19 +84,19 @@ if (isset($_POST["btnSubmit"])) {
 // form. Note it is best to follow the same order as declared in section 1c.
 
 
-   
+
 
     $firstName = htmlentities($_POST["txtFirstName"], ENT_QUOTES, "UTF-8");
     $dataRecord[] = $firstName;
     $comments = htmlentities($_POST["txtComments"], ENT_QUOTES, "UTF-8");
-$dataRecord[] = $comments;
+    $dataRecord[] = $comments;
 
-    $email = filter_var($_POST["txtEmail"], FILTER_SANITIZE_EMAIL);
-$dataRecord[] = $email;
-    $mountain = htmlentities($_POST["lstMountains"],ENT_QUOTES,"UTF-8");
-$dataRecord[] = $mountain;
-    
-    
+    $email = filter_var($_POST["emailTxt"], FILTER_SANITIZE_EMAIL);
+    $dataRecord[] = $email;
+    $mountain = htmlentities($_POST["lstMountains"], ENT_QUOTES, "UTF-8");
+    $dataRecord[] = $mountain;
+
+
 
 //@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 //
@@ -124,8 +124,8 @@ $dataRecord[] = $mountain;
     if (!$errorMsg) {
         if ($debug)
             print "<p>Form is valid</p>";
-        
-        
+
+
 
 // end form is valid
 // 
@@ -188,7 +188,7 @@ $dataRecord[] = $mountain;
         $from = "benjamin.gelb@uvm.edu";
 // subject of mail should make sense to your form
         $todaysDate = strftime("%x");
-        $subject = "Feedback Form: " . $todaysDate;
+        $subject = "Contact Form: " . $todaysDate;
         $mailed = sendMail($to, $cc, $bcc, $from, $subject, $message);
     } // end form is valid
 } // ends if form was submitted.
@@ -236,7 +236,7 @@ $dataRecord[] = $mountain;
 
 
         if ($firstName == "") {
-            $errorMsg[] = "Enter Your Feedback";
+            $errorMsg[] = "Enter Your first name";
             $firstNameERROR = true;
         } elseif (!verifyAlphaNum($firstName)) {
             $errorMsg[] = "Your first name appears to have extra character.";
@@ -268,55 +268,55 @@ $dataRecord[] = $mountain;
         //this prints out a css class so that we can highlight the background etc. to
         //make it stand out that a mistake happened here.
         ?>
-   <form action="<?php print $phpSelf; ?>"
+        <form action="<?php print $phpSelf; ?>"
               method="post" 
               id="formRef"><!--get puts in url--> <!--wrapper-->
-       <fieldset class="wrapper">
-                <legend align="center">Contact Us</legend>
-                    
-                     <fieldset class="contact">
-                        <legend align="center">Contact Information</legend>
-                        <label for="txtFirstName" class="required">First Name
-                            <input type="text" id="txtFirstName" name="txtFirstName"
-                                   value="<?php print $firstName; ?>"
-                                   tabindex="100" maxlength="45" placeholder="Enter your first name"
-                                   <?php if ($firstNameERROR) print 'class="mistake"'; ?>
-                                   onfocus="this.select()"
-                                   autofocus>
-                           
-                            
-                        </label>
-                        
-                     </fieldset>
-                
-               
-                           
-                      
+            <fieldset class="wrapper">
+                <legend>Contact Us</legend>
 
-      <fieldset class="emailTxt"> <legend align="center"> Email</legend><label for="emailTxt" class="emailTxt">Email Address</label> <input type="text" id="txtEmail" name="txtEmail" value="benjamin.gelb@uvm.edu" tabindex="120" maxlength="100" placeholder="Benjamin.gelb@uvm.edu"<?php if ($emailERROR) print 'class="mistake"'; ?> onfocus="this.select()" autofocus=""/>
+                <fieldset class="contact">
+                    <legend>Contact Information</legend>
+                    <label for="txtFirstName" class="required">First Name
+                        <input type="text" id="txtFirstName" name="txtFirstName"
+                               value="<?php print $firstName; ?>"
+                               tabindex="100" maxlength="45" placeholder="Enter your first name"
+                               <?php if ($firstNameERROR) print 'class="mistake"'; ?>
+                               onfocus="this.select()"
+                               autofocus>
 
-    </fieldset> <!-- ends contact -->
-                    
-                    
-                    <fieldset  class="textarea">
-                        <legend align="center">Comments</legend>
-    <label for="txtComments" class="required">Enter your questions</label>
-    <textarea id="txtComments" 
-              name="txtComments" 
-              tabindex="200"
-    <?php if ($emailERROR) print 'class="mistake"'; ?>
-              onfocus="this.select()" 
-              style="width: 25em; height: 4em;" ><?php print $comments; ?></textarea>
-              <!-- NOTE: no blank spaces inside the text area -->
 
-                        </fieldset> <!-- ends wrapper Two -->
+                    </label>
 
-                        <fieldset class="buttons">
-                            <legend></legend>
-                            <input type="submit" id="btnSubmit" name="btnSubmit" value="Enter" tabindex="900" class="button">
-                        </fieldset> <!-- ends buttons -->
+                </fieldset>
 
-                    </fieldset> <!-- Ends Wrapper -->
+
+
+
+
+                <fieldset class="emailTxt"> <legend> Email</legend><label for="emailTxt" class="emailTxt">Email Address</label> <input type="text" id="emailTxt" name="emailTxt" value="benjamin.gelb@uvm.edu" tabindex="120" maxlength="100" placeholder="Benjamin.gelb@uvm.edu"<?php if ($emailERROR) print 'class="mistake"'; ?> onfocus="this.select()" autofocus=""/>
+
+                </fieldset> <!-- ends contact -->
+
+
+                <fieldset  class="textarea">
+                    <legend>Comments</legend>
+                    <label for="txtComments" class="required">Enter your questions</label>
+                    <textarea id="txtComments" 
+                              name="txtComments" 
+                              tabindex="200"
+                              <?php if ($emailERROR) print 'class="mistake"'; ?>
+                              onfocus="this.select()" 
+                              style="width: 25em; height: 4em;" ><?php print $comments; ?></textarea>
+                    <!-- NOTE: no blank spaces inside the text area -->
+
+                </fieldset> <!-- ends wrapper Two -->
+
+                <fieldset class="buttons">
+                    <legend></legend>
+                    <input type="submit" id="btnSubmit" name="btnSubmit" value="Enter" tabindex="900" class="button">
+                </fieldset> <!-- ends buttons -->
+
+            </fieldset> <!-- Ends Wrapper -->
         </form>
 
         <?php

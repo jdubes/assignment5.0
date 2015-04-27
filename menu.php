@@ -5,7 +5,6 @@ the web pages meta tags along with browser checks. Header adds the title
 and logo for the site. Nav adds the navigation for easy transitions -->
 <?php
 include ("top.php");
-
 ?>
 
 
@@ -76,8 +75,6 @@ if ($file) {
 ?>
 
 <?php
-
-
 print "<br>";
 print "<br>";
 print "<br>";
@@ -87,20 +84,17 @@ print "<br>";
 print "<br>";
 print "<br>";
 /* display the data */
-print "<ul class=" . "img-list". '>';
+print "<ul class=" . "img-list" . '>';
 
 foreach ($records as $oneRecord) {
     if ($oneRecord[0] != "") {  //the eof would be a "" 
-        
- 
-
         print "\n\t<li>";
         //print out values
         print '<a href="' . $oneRecord[3] . '" target="_blank" ' . '>';
         print "\n\t";
-        print '<img src="images/' . $oneRecord[4] .'" alt="' . $oneRecord[2] . '"/>';
+        print '<img src="images/' . $oneRecord[4] . '" alt="' . $oneRecord[2] . '"/>';
         print '</a>';
-        print '<span class="text-content">' . $oneRecord[0] . "<br>". $oneRecord[1] . "<br>". $oneRecord[2] ."<br>"."Calories: " .$oneRecord[3]. '</span>';
+        print '<span class="text-content">' . $oneRecord[0] . "<br>" . $oneRecord[1] . "<br>" . $oneRecord[2] . "<br>" . "Calories: " . $oneRecord[3] . '</span>';
         print "\n\t</li>";
     }
 }
@@ -109,12 +103,10 @@ print '</ul>';
 
 if ($debug)
     print "<p>End of processing.</p>\n";
-
 ?>
 
 <?php
 include "footer.php";
-
 ?>
 </body>
 </html>
